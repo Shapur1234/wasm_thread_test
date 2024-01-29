@@ -4,6 +4,9 @@ version = "0.1.0"
 authors = ["Philip Peterson <pc.peterso@gmail.com>"]
 edition = "2021"
 
+[profile.release]
+panic = "abort"
+
 [dependencies]
 async-channel = "1.4"
 console_error_panic_hook = "0.1"

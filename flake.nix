@@ -53,7 +53,6 @@
           filter = path: type:
             (lib.hasSuffix "\.html" path) ||
             (lib.hasSuffix "\.scss" path) ||
-            (lib.hasSuffix "\.js" path) ||
             (craneLib.filterCargoSources path type)
           ;
         };
@@ -65,6 +64,7 @@
 
           CARGO_BUILD_TARGET = "wasm32-unknown-unknown";
 
+          # TRUNK_SERVE_HEADERS = ''Cross-Origin-Opener-Policy:same-origin:Cross-Origin-Embedder-Policy:require-corp'';
 
           cargoVendorDir = craneLib.vendorMultipleCargoDeps {
             inherit (craneLib.findCargoFiles src) cargoConfigs;
@@ -83,9 +83,8 @@
             ];
           };
 
-
-          cargoExtraArgs = "-Z build-std=panic_abort,std";
-          RUSTFLAGS = "-C target-feature=+atomics,+bulk-memory,+mutable-globals";
+          # cargoExtraArgs = "-Z build-std=panic_abort,std";
+          # RUSTFLAGS = "-C target-feature=+atomics,+bulk-memory,+mutable-globals";
 
           buildInputs = [
             # Add additional build inputs here
