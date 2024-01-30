@@ -65,6 +65,8 @@
           CARGO_BUILD_TARGET = "wasm32-unknown-unknown";
 
           # TRUNK_SERVE_HEADERS = ''Cross-Origin-Opener-Policy:same-origin:Cross-Origin-Embedder-Policy:require-corp'';
+          # "TRUNK_SERVE_HEADERS_Cross-Origin-Opener-Policy" = "same-origin";
+          # "TRUNK_SERVE_HEADERS_Cross-Origin-Embedder-Policy" = "require-corp";
 
           cargoVendorDir = craneLib.vendorMultipleCargoDeps {
             inherit (craneLib.findCargoFiles src) cargoConfigs;

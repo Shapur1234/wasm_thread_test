@@ -3,6 +3,13 @@ name = "vanilla-example"
 version = "0.1.0"
 authors = ["Philip Peterson <pc.peterso@gmail.com>"]
 edition = "2021"
+default-run = "vanilla-example-native"
+
+# [lib]
+# crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "vanilla-example-native"
 
 [profile.release]
 panic = "abort"

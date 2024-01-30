@@ -1,5 +1,11 @@
+[build]
+filehash = false
+
 [serve]
 headers = { "Cross-Origin-Opener-Policy" = "same-origin", "Cross-Origin-Embedder-Policy" = "require-corp" }
 
 [tools]
 wasm_bindgen = "0.2.87"
+
+[clean]
+cargo = true
